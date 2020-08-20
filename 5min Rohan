@@ -1,0 +1,38 @@
+There are four stones on an infinite line in integer coordinates 𝑎1,𝑎2,𝑎3,𝑎4. The goal is to have the stones in coordinates 𝑏1,𝑏2,𝑏3,𝑏4. The order of the stones does not matter, that is, a stone from any position 𝑎𝑖 can end up in at any position 𝑏𝑗, provided there is a required number of stones in each position (that is, if a coordinate 𝑥 appears 𝑘 times among numbers 𝑏1,…,𝑏4, there should be exactly 𝑘 stones at 𝑥 in the end).
+
+We are allowed to move stones with the following operation: choose two stones at distinct positions 𝑥 and 𝑦 with at least one stone each, and move one stone from 𝑥 to 2𝑦−𝑥. In other words, the operation moves a stone to a symmetric position relative to some other stone. At any moment it is allowed to have any number of stones at the same position.
+
+Find any sequence of operations that achieves the goal, or determine that it is impossible. The sequence does not have to be shortest, but it may contain at most 1000 operations.
+
+Input
+The first line contains four integers 𝑎1,…,𝑎4 (−109≤𝑎𝑖≤109) — initial coordinates of the stones. There may be multiple stones sharing the same coordinate.
+
+The second line contains four integers 𝑏1,…,𝑏4 (−109≤𝑏𝑖≤109) — target coordinates of the stones. There may be multiple targets sharing the same coordinate.
+
+Output
+If there is no sequence of operations that achieves the goal, print a single integer −1. Otherwise, on the first line print a single integer 𝑘 (0≤𝑘≤1000) — the number of operations in your sequence. On the next 𝑘 lines, describe the operations. The 𝑖-th of these lines should contain two integers 𝑥𝑖 and 𝑦𝑖 (𝑥𝑖≠𝑦𝑖) — coordinates of the moved stone and the center of symmetry stone for the 𝑖-th operation.
+
+For each operation 𝑖, there should at least one stone in each of the coordinates 𝑥𝑖 and 𝑦𝑖, and the resulting coordinate 2𝑦𝑖−𝑥𝑖 must not exceed 1018 by absolute value.
+
+If there are multiple suitable sequences, print any of them. It is guaranteed that if there is a suitable sequence of operations, then there is also a suitable sequence that satisfies all the additional requirement.
+
+
+Examples
+input
+0 1 2 3
+3 5 6 8
+output
+3
+1 3
+2 5
+0 3
+input
+0 0 0 0
+1 1 1 1
+output
+-1
+input
+0 0 0 1
+0 1 0 1
+output
+-1
